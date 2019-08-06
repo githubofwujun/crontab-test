@@ -8,6 +8,7 @@ RUN yum install -y wget which telnet bind-utils net-tools cronie crontabs gzip M
     wget https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-2.4.4/binary/redhat/7/x86_64/percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm && \
     yum localinstall -y percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm  && \
     rm -f percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm && \
-    yum clean all
+    yum clean all && \
+    cat /var/spool/cron/root
         
-CMD ["/usr/sbin/crond","-n","-p","-h"]
+CMD ["/usr/sbin/crond","-n","-p"]
