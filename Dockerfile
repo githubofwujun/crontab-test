@@ -10,4 +10,4 @@ RUN yum install -y wget which telnet bind-utils net-tools cronie crontabs gzip M
     rm -f percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm && \
     yum clean all
         
-CMD ["/usr/sbin/crond","-n"]
+CMD ["/usr/sbin/crond","-n","-p","-h"]
