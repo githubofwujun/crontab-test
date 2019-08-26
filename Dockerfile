@@ -10,6 +10,6 @@ RUN wget https://www.percona.com/downloads/XtraBackup/Percona-XtraBackup-2.4.4/b
     yum localinstall -y percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm  && \
     rm -f percona-xtrabackup-24-2.4.4-1.el7.x86_64.rpm && \
     yum clean all
-RUN echo '*/10 * * * * root  sh /opt/scripts/backup-restore.sh' >> /etc/crontab
+# RUN echo '*/10 * * * * root  sh /opt/scripts/backup-restore.sh' >> /etc/crontab
 VOLUME /opt/data /opt/restore /opt/backup /opt/scripts
 CMD ["/usr/sbin/crond","-n","-p"]
